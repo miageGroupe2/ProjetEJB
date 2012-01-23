@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 	
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	
+	<!--  
+	<persistence-unit name="pu" transaction-type="RESOURCE_LOCAL" >
+	    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+	    <class>sid.sid_tp2.model.Commande</class>
+	    <properties>
+	        <property name="eclipselink.target-database" value="MYSQL" />
+	        <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+	        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/projetejb" />
+	        <property name="javax.persistence.jdbc.user" value="ejb" />
+	        <property name="javax.persistence.jdbc.password" value="ejb" />
+	        <property name="eclipselink.ddl-generation" value="create-tables" />
+                      <property name="eclipselink.logging.level" value="FINEST" />
+	   </properties>
+	</persistence-unit>
+	-->
+	<persistence-unit name="pu" transaction-type="JTA">
+	    <jta-data-source>monPool</jta-data-source>
+	    <class>sid.sid_tp2.model.Commande</class>
+	    <!-- <exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="eclipselink.target-server" value="SunAS9"/>   
+	            <property name="eclipselink.target-database" value="MYSQL"/> -->
+	    <properties>       
+	            <property name="eclipselink.logging.level" value="FINEST"/>
+        </properties>
+	</persistence-unit>
+</persistence>
